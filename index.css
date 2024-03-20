@@ -204,7 +204,8 @@ footer {
     background-color: white;
     color: rgb(87, 81, 81);
     height: 50px;
-    width: 200px;
+    min-width: 200px;
+    padding: 0px 5px 0px 5px;
     border:  none;
     margin: 5px 10px 5px 10px;
     border-radius: 5px;

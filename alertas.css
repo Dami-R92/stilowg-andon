@@ -1,0 +1,67 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    flex-wrap: wrap;
+  }
+  
+  .pdf-embed {
+    width: 95%;
+    min-height: 720px;
+    max-height: 80%;
+
+    /* margin-bottom: 50px; */
+    margin-top: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:center ;
+    max-height: 5vw;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el encabezado esté por encima del contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Box shadow con opacidad */
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow con opacidad */
+    font-size: 3vw;
+    margin: 0;
+
+}
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+}
+
+#logo {
+    max-height: 3.5vw;
+    align-self: center;
+}
+#menu-logo {
+  max-height: 3.5vw;
+}
