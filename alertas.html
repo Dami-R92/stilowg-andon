@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <title>StiloWG - Alertas 2024</title>
+    <title>StiloWG - Alertas de Calidad</title>
     <link rel="stylesheet" href="alertas.css" />
   </head>
   <body>
@@ -22,70 +22,117 @@
         src="./resources/Logo StiloWG - Transparente sin subtexto (2).png"
         alt="logo-stilowg"
       />
-      <h1>Visualizador de Alertas de Calidad 2024</h1>
+      <h1>Visualizador de Alertas de Calidad</h1>
       <img id="logo" src="./resources/senal-de-alerta.png" alt="" />
       <!-- 
         <a href="" /><img id="menu-logo"
             src="./resources/menu.png" alt="enviar reporte a admin"></a> -->
     </header>
-    <div class="pdf-container">
+    <div class="buttons-container">
+      <button class="maq--button2" onclick="cargarPDFs2025()">2025</button>
+      <button class="maq--button2" onclick="cargarPDFs2024()">2024</button>
+    </div>
+    <div class="pdf-container" id="alertas-container"></div>
+    <script>
+      function cargarPDFs2025() {
+        const contenedor = document.getElementById("alertas-container");
+        if (!contenedor) {
+          console.error("No se encontró el contenedor de PDFs.");
+          // return;
+        } else {
+          contenedor.innerHTML = "";
+        }
 
-      <!-- !ALERTA INFORMAL POR MISIL -->
-      <!-- <embed
-      src="./resources/alerts/09 - ALERTA - MT-211 - SUPPORT, FR SEAT HEADREST - Informal.pdf"
-      type="application/pdf"
-      class="pdf-embed"
-      zoom="fit"
-      view="fitH"
-      disablekb="true"
-      disable="true"
-    /> -->
-    <!-- !Alerta informal por  VU-217 -->
+        fetch("alertas-pdf2025.JSON")
+          .then((res) => res.json())
+          .then((pdfs) => {
+            const contenedor = document.getElementById("alertas-container");
+            pdfs.forEach((pdf) => {
+              const embed = document.createElement("embed");
+              embed.src = pdf;
+              embed.type = "application/pdf";
+              embed.className = "pdf-embed";
+              embed.setAttribute("zoom", "fit");
+              embed.setAttribute("view", "fitH");
+              embed.setAttribute("disablekb", "true");
+              embed.setAttribute("disable", "true");
+              contenedor.appendChild(embed);
+            });
+          })
+          .catch((err) => {
+            console.error("Error cargando los PDFs:", err);
+          });
+
+        console.log("Cargando PDFs de 2025...");
+      }
+	  function cargarPDFs2024() {
+        const contenedor = document.getElementById("alertas-container");
+        if (!contenedor) {
+          console.error("No se encontró el contenedor de PDFs.");
+          // return;
+        } else {
+          contenedor.innerHTML = "";
+        }
+
+        fetch("alertas-pdf2024.JSON")
+          .then((res) => res.json())
+          .then((pdfs) => {
+            const contenedor = document.getElementById("alertas-container");
+            pdfs.forEach((pdf) => {
+              const embed = document.createElement("embed");
+              embed.src = pdf;
+              embed.type = "application/pdf";
+              embed.className = "pdf-embed";
+              embed.setAttribute("zoom", "fit");
+              embed.setAttribute("view", "fitH");
+              embed.setAttribute("disablekb", "true");
+              embed.setAttribute("disable", "true");
+              contenedor.appendChild(embed);
+            });
+          })
+          .catch((err) => {
+            console.error("Error cargando los PDFs:", err);
+          });
+
+        console.log("Cargando PDFs de 2024...");
+      }
+    </script>
     <!-- <embed
-    src="./resources/alerts/08 - ALERTA N8 VUTEQ VU-217.pdf"
-    type="application/pdf"
-    class="pdf-embed"
-    zoom="fit"
-    view="fitH"
-    disablekb="true"
-    disable="true"
-  /> -->
-  <embed
-  src="./resources/alerts/10 - ALERTA QAN 774 2025 164 -PS-07 - VIDE-POCHES INF CENT PLANCHE BORD M..pdf"
-  type="application/pdf"
-  class="pdf-embed"
-  zoom="fit"
-  view="fitH"
-  disablekb="true"
-  disable="true"
-/>
+        src="./resources/alerts/10 - ALERTA QAN 774 2025 164 -PS-07 - VIDE-POCHES INF CENT PLANCHE BORD M..pdf"
+        type="application/pdf"
+        class="pdf-embed"
+        zoom="fit"
+        view="fitH"
+        disablekb="true"
+        disable="true"
+      />
       <embed
-      src="./resources/alerts/06 - ALERTA QAN 774 2024 512 PS-01.pdf"
-      type="application/pdf"
-      class="pdf-embed"
-      zoom="fit"
-      view="fitH"
-      disablekb="true"
-      disable="true"
-    />
-    <embed
-    src="./resources/alerts/05 - ALERTA QAN 774 2024 375 PS-05.pdf"
-    type="application/pdf"
-    class="pdf-embed"
-    zoom="fit"
-    view="fitH"
-    disablekb="true"
-    disable="true"
-  />
+        src="./resources/alerts/06 - ALERTA QAN 774 2024 512 PS-01.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+        zoom="fit"
+        view="fitH"
+        disablekb="true"
+        disable="true"
+      />
       <embed
-      src="./resources/alerts/04 -ALERTA QAN 774 2024 313 -PS-05 - FLASQUE AV G CONSOLE- Tiro Corto.pdf"
-      type="application/pdf"
-      class="pdf-embed"
-      zoom="fit"
-      view="fitH"
-      disablekb="true"
-      disable="true"
-    />
+        src="./resources/alerts/05 - ALERTA QAN 774 2024 375 PS-05.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+        zoom="fit"
+        view="fitH"
+        disablekb="true"
+        disable="true"
+      />
+      <embed
+        src="./resources/alerts/04 -ALERTA QAN 774 2024 313 -PS-05 - FLASQUE AV G CONSOLE- Tiro Corto.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+        zoom="fit"
+        view="fitH"
+        disablekb="true"
+        disable="true"
+      />
       <embed
         src="./resources/alerts/03 - ALERTA QAN 774 2024 176 - Stilo - VIDE POCHES INF - Mal Etiquetado.pdf"
         type="application/pdf"
@@ -114,14 +161,13 @@
         disable="true"
       />
       <embed
-      src="./resources/alerts/00 - MT-206-1.pdf"
-      type="application/pdf"
-      class="pdf-embed"
-      zoom="fit"
-      view="fitH"
-      disablekb="true"
-      disable="true"
-    />
-    </div>
+        src="./resources/alerts/00 - MT-206-1.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+        zoom="fit"
+        view="fitH"
+        disablekb="true"
+        disable="true"
+      /> -->
   </body>
 </html>

@@ -35,7 +35,8 @@
                 <a target="_blank" href="./alertas.html" /><button
                 class="maq--button2"> Ver todas las Alertas de Calidad</button></a>
                 <embed
-                src="./resources/alerts/10 - ALERTA QAN 774 2025 164 -PS-07 - VIDE-POCHES INF CENT PLANCHE BORD M..pdf"
+                id="pdf-principal"
+                src=""
                 type="application/pdf"
                 class="pdf-embed"
                 zoom="fit"
@@ -43,6 +44,7 @@
                 disablekb="true"
                 disable="true"
               />
+            
             </div>
             <div class="function--container2">
                 <h2>INSTRUCTIVOS Y ALARMAS</h2>
@@ -60,5 +62,18 @@
             </div>
         </div>
     </div>
+    <script>
+      fetch("alertas-pdf2025.JSON")
+        .then(res => res.json())
+        .then(lista => {
+          if (lista.length > 0) {
+            const primerPDF = lista[0];
+            document.getElementById('pdf-principal').src = primerPDF;
+          }
+        })
+        .catch(err => {
+          console.error("No se pudo cargar el PDF:", err);
+        });
+    </script>
   </body>
 </html>

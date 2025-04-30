@@ -65,3 +65,33 @@ h3 {
 #menu-logo {
   max-height: 3.5vw;
 }
+
+.maq--button2 {
+  background-color: rgb(87, 81, 81);
+  color: white;
+  min-height: 50px;
+  min-width: 200px;
+  padding: 0px 5px 0px 5px;
+  border:  none;
+  margin: 5px 10px 5px 10px;
+  border-radius: 5px;
+  font-size: 2vi;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  box-shadow: 5px 6px 7px 0px rgb(54 62 70 / 50%);
+  cursor:pointer;
+}
+
+.maq--button2:hover {
+  transition: 0.3s;
+  background-color: rgb(235, 100, 100);
+  color: white;
+}
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
